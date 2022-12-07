@@ -54,7 +54,16 @@ export const createOrder = order => dispatch => {
       .then(order => dispatch({ type: 'DELIVER_ORDER', payload: order, success: true }));
   };
 
+  export const deleteOrder = order => dispatch => {
+    fetch(`${BASE_URL}/orders/${order.id}`, {
+      method: 'DELETE',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+    }).then(order => dispatch({ type: 'DELETE_ORDER', payload: order, success: true }));
+  };
   
+
 
 
 
