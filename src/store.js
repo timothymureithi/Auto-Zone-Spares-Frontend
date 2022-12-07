@@ -1,4 +1,14 @@
-import { composeWithDevTools } from "redux-devtools-extension";
-import thunk from 'redux-thunk';
-import {createStore, combineReducers, applyMiddleware} from 'redux';
+import React from 'react'
+import { connect } from 'react-redux'
 
+export const store = (props) => {
+  return (
+    <div>store</div>
+  )
+}
+
+const mapStateToProps = (state) => ({})
+
+const mapDispatchToProps = {}
+
+export default connect(mapStateToProps, mapDispatchToProps)(store)
