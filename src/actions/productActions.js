@@ -19,3 +19,20 @@ export const fetchProducts = () => dispatch => {
       },
     });
   };
+
+  export const sortProducts = (products, sort) => dispatch => {
+    const sortedProducts = products.slice();
+    if (sort === 'latest') {
+      sortedProducts.sort((a, b) => (a.id > b.id ? 1 : -1));
+    } else {
+      sortedProducts.sort((a, b) => (sort === 'lowest' ? (a.price > b.price ? 1 : -1) : a.price > b.price ? -1 : 1));
+    }
+  
+    dispatch({
+      type: 'ORDER_PRODUCTS_BY_PRICE',
+      payload: {
+        sort: sort,
+        sortedProducts: sortedProducts,
+      },
+    });
+  };
