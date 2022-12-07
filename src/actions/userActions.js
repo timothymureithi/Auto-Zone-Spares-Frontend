@@ -48,5 +48,45 @@ export const signin = (email, password) => dispatch => {
       .then(res => res.json())
       .then(user => dispatch({ type: 'UPDATE_USER', payload: { user } }));
   };
+
+  export const saveShipping = (userId, address, city, postalCode, country) => dispatch => {
+    fetch(`${BASE_URL}/users/${userId}`, {
+      method: 'PATCH',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        shipping: {
+          address,
+          city,
+          postalCode,
+          country,
+        },
+      }),
+    })
+      .then(res => res.json())
+      .then(user => dispatch({ type: 'UPDATE_USER', payload: { user } }));
+  };
+  
+
+export const savePayment = (userId, paymentMethod) => dispatch => {
+    fetch(`${BASE_URL}/users/${userId}`, {
+      method: 'PATCH',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        payment: {
+          paymentMethod,
+        },
+      }),
+    })
+      .then(res => res.json())
+      .then(user => dispatch({ type: 'UPDATE_USER', payload: { user } }));
+  };
+  
+  export const logout = () => dispatch => {
+    dispatch({ type: 'LOGOUT_USER' });
+  };
   
   
