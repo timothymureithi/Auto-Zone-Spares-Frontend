@@ -36,3 +36,70 @@ export const fetchProducts = () => dispatch => {
       },
     });
   };
+
+  export const filterProductsByCategory = (products, category) => dispatch => {
+    let filteredByCategory = products;
+    if (category !== 'All') {
+      filteredByCategory = products.filter(product => product.category.toUpperCase() === category.toUpperCase());
+    }
+    dispatch({
+      type: 'FILTER_PRODUCTS_BY_CATEGORY',
+      payload: {
+        category: category,
+        filteredByCategory: filteredByCategory,
+      },
+    });
+  };
+  
+  export const detailsProduct = productId => dispatch => {
+    fetch(`${BASE_URL}/products/${productId}`)
+      .then(res => res.json())
+      .then(product => dispatch({ type: 'GET_PRODUCT', payload: product }));
+  };
+
+  export const saveProduct = product => dispatch => {
+    if (product.id) {
+      fetch(`${BASE_URL}/products/${product.id}`, {
+        method: 'PATCH',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ product }),
+      })
+        .then(res => res.json())
+        .then(product => dispatch({ type: 'SAVE_PRODUCT', payload: product, success: true }));
+    } else {
+      fetch(`${BASE_URL}/products`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ product }),
+      })
+        .then(res => res.json())
+        .then(product => dispatch({ type: 'SAVE_PRODUCT', payload: product, success: true }));
+    }
+  };
+  
+  export const deleteProduct = product => dispatch => {
+    fetch(`${BASE_URL}/products/${product.id}`, {
+      method: 'DELETE',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+    }).then(product => dispatch({ type: 'DELETE_PRODUCT', payload: product, success: true }));
+  };
+  
+  export const saveProductReview = (productId, review) => dispatch => {
+    fetch(`${BASE_URL}/products/${productId}/reviews`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({ review }),
+    })
+      .then(res => res.json())
+      .then(review => dispatch({ type: 'SAVE_PRODUCT_REVIEW', payload: review, success: true }));
+  };
+  
+  
