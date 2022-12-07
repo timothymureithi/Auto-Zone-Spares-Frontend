@@ -30,4 +30,23 @@ export const signin = (email, password) => dispatch => {
       .then(user => dispatch({ type: 'REGISTER_USER', payload: user }));
   };
 
+  export const update = (userId, first_name, last_name, email, password, password_confirmation) => dispatch => {
+    fetch(`${BASE_URL}/users/${userId}`, {
+      method: 'PATCH',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        userId,
+        first_name,
+        last_name,
+        email,
+        password,
+        password_confirmation,
+      }),
+    })
+      .then(res => res.json())
+      .then(user => dispatch({ type: 'UPDATE_USER', payload: { user } }));
+  };
+  
   
