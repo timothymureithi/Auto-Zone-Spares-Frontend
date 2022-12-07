@@ -1,3 +1,4 @@
+import React from "react";
 import thunk from "redux-thunk";
 import { composeWithDevTools } from "redux-devtools-extension";
 import { createStore, applyMiddleware, combineReducers} from 'redux';
