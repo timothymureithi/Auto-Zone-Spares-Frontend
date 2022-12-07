@@ -42,6 +42,20 @@ export const createOrder = order => dispatch => {
       .then(order => dispatch({ type: 'PAY_ORDER', payload: order, success: true }));
   };
 
+  export const deliverOrder = order => dispatch => {
+    fetch(`${BASE_URL}/orders/${order.id}`, {
+      method: 'PATCH',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({ order }),
+    })
+      .then(res => res.json())
+      .then(order => dispatch({ type: 'DELIVER_ORDER', payload: order, success: true }));
+  };
+
   
+
+
 
 
