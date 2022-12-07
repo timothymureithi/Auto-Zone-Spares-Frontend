@@ -19,3 +19,12 @@ export const addToCart = (product, qty) => (dispatch, getState) => {
   });
   localStorage.setItem('cartItems', JSON.stringify(cartItems));
 };
+
+export const removeFromCart = product => (dispatch, getState) => {
+    const cartItems = getState()
+      .cart.cartItems.slice()
+      .filter(item => item.id !== product.id);
+  
+    dispatch({ type: 'CART_REMOVE_ITEM', payload: { cartItems } });
+    localStorage.setItem('cartItems', JSON.stringify(cartItems));
+  };
