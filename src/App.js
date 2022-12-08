@@ -100,7 +100,7 @@ function App() {
             </li>
           </ul>
         </aside>
-
+        
         {/* Main Content Section */}
         <div className='content'>
           <main className='main'>

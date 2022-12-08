@@ -44,7 +44,7 @@ button {
 
 .header {
   grid-area: header;
-  background-color: #203040;
+  background-color: #0d361a;
   color: #ffffff;
   display: flex;
   justify-content: space-between;
@@ -57,7 +57,8 @@ button {
 
 .brand a {
   color: #ffffff;
-  font-size: 2.5rem;
+  /* font-size: 2.5rem; */
+  font-size: 4vw;
   font-weight: bold;
   text-decoration: none;
 }
@@ -88,7 +89,7 @@ button {
 
 .footer {
   grid-area: footer;
-  background-color: #203040;
+  background-color: #0d361a;
   color: #ffffff;
   display: flex;
   justify-content: center;
@@ -120,30 +121,18 @@ a:hover {
   border-bottom: 0.1rem #c0c0c0 solid;
 }
 
-/* .product {
+.product {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   height: 100%;
-} */
-
-.product {
-  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
-  transition: 0.3s;
-  width: 40%;
 }
-
-.product:hover {
-  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
-}
-
-/* .container {
-  padding: 2px 16px;
-} */
 
 .product-name {
-  font-size: 2rem;
-  font-weight: bold;
+  font-size: 0.9em;
+  font-weight: 500;
+  color: #74642F;
+  margin: 0;
 }
 
 .product-brand {
@@ -161,6 +150,7 @@ a:hover {
 .product-image {
   width: 20rem;
   height: 20rem;
+
 }
 
 .product-rating {
