@@ -40,3 +40,23 @@ export const ordersReducer = (
           success: true,
           order: action.payload,
         };
+
+    case 'PAY_ORDER':
+        return {
+          ...state,
+          order: action.payload,
+          success: true,
+        };
+  
+      case 'DELIVER_ORDER':
+        return {
+          ...state,
+          order: action.payload,
+          success: true,
+        };
+  
+      default:
+        return state;
+    }
+  };
+  
