@@ -53,7 +53,17 @@ const ProfileContainer = props => {
                 id='first_name'
                 onChange={e => setFirstName(e.target.value)}
               />
-               </li></ul></div></div>
+              </li>
+            <li>
+              <label htmlFor='last_name'>Last Name</label>
+              <input
+                value={lastName}
+                required
+                type='text'
+                name='last_name'
+                id='last_name'
+                onChange={e => setLastName(e.target.value)}
+              />
                
           
 
