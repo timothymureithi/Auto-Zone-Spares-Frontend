@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { savePayment } from '../../actions/userActions';
 import CheckoutSteps from '../../components/checkout/CheckoutSteps';
+import formatCurrency from '../../util';
+
 
 const PaymentContainer = props => {
   const dispatch = useDispatch();
