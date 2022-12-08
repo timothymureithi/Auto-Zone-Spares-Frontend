@@ -2,6 +2,10 @@ import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { removeFromCart } from '../../actions/cartActions';
 import { Link } from 'react-router-dom';
+import formatCurrency from '../../util';
+import Fade from 'react-reveal'
+
+
 
 const MiniCart = props => {
     const dispatch = useDispatch();
@@ -60,6 +64,6 @@ const MiniCart = props => {
         </div>
       );
     };
-    
+
     export default MiniCart;
 

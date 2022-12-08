@@ -1,16 +1,30 @@
-import React from "react";
-import thunk from "redux-thunk";
-import { composeWithDevTools } from "redux-devtools-extension";
-import { createStore, applyMiddleware, combineReducers} from 'redux';
+import { combineReducers, applyMiddleware } from 'redux';
+import { legacy_createStore as createStore } from 'redux';
 
-const store = (props) => {
-  return (
-    <div>store</div>
-  )
-}
+import { composeWithDevTools } from 'redux-devtools-extension';
+import thunk from 'redux-thunk';
+import { productsReducer } from './reducers/productReducers';
+import { cartReducer } from './reducers/cartReducers';
+import { userReducer } from './reducers/userReducers';
+import { ordersReducer } from './reducers/orderReducers';
 
-const mapStateToProps = (state) => ({})
+const cartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
+const userInfo = JSON.parse(localStorage.getItem('userInfo')) || { shipping: {}, payment: {} };
 
-const mapDispatchToProps = {}
+const initalState = {
+  cart: { cartItems },
+  user: { userInfo, orders: [] },
+};
 
-export default store
+const store = createStore(
+  combineReducers({
+    products: productsReducer,
+    cart: cartReducer,
+    user: userReducer,
+    orders: ordersReducer,
+  }),
+  initalState,
+  composeWithDevTools(applyMiddleware(thunk))
+);
+
+export default store;
