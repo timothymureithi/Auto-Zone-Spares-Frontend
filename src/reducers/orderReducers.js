@@ -1,0 +1,42 @@
+export const productsReducer = (
+    state = {
+      products: [],
+      filteredProducts: [],
+      product: { reviews: [] },
+      filter: '',
+      category: '',
+      sort: 'latest',
+      success: true,
+    },
+    action
+  ) => {
+    switch (action.type) {
+      case 'FETCH_PRODUCTS':
+        return {
+          ...state,
+          product: '',
+          products: action.payload,
+          filteredProducts: action.payload,
+        };
+  
+      // Filter Products By Category
+      case 'FILTER_PRODUCTS_BY_CATEGORY':
+        return {
+          ...state,
+          category: action.payload.category,
+          filteredProducts: action.payload.filteredByCategory,
+        };
+  
+      case 'FILTER_PRODUCTS_BY_SEARCH':
+        return {
+          ...state,
+          filter: action.payload.filter,
+          filteredProducts: action.payload.filteredProducts,
+        };
+  
+      case 'ORDER_PRODUCTS_BY_PRICE':
+        return {
+          ...state,
+          sort: action.payload.sort,
+          filteredProducts: action.payload.sortedProducts,
+        };
