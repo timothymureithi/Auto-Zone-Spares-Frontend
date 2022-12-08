@@ -5,6 +5,7 @@ import { detailsProduct, saveProductReview } from '../actions/productActions';
 import Rating from '../components/products/Rating';
 import { addToCart } from '../actions/cartActions';
 
+
 const ProductContainer = props => {
   const dispatch = useDispatch();
   const [qty, setQty] = useState(1);

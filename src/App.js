@@ -45,7 +45,7 @@ function App() {
         <header className='header'>
           <div className='brand'>
             <button onClick={openMenu}>&#9776;</button>
-            <Link to='/'>Widget Store</Link>
+            <Link to='/'>AUTOZONE</Link>
           </div>
           <div className='header-links'>
             <Link to='/cart'>
@@ -80,22 +80,22 @@ function App() {
             </li>
             <li>
               <button type='button' onClick={e => categoryHandler(e.target.innerText)}>
-                DeWalt
+                Engines
               </button>
             </li>
             <li>
               <button type='button' onClick={e => categoryHandler(e.target.innerText)}>
-                Craftsman
+                Air Filters
               </button>
             </li>
             <li>
               <button type='button' onClick={e => categoryHandler(e.target.innerText)}>
-                Stanley
+                Batteries
               </button>
             </li>
             <li>
               <button type='button' onClick={e => categoryHandler(e.target.innerText)}>
-                Unknown
+                General
               </button>
             </li>
           </ul>
@@ -120,7 +120,7 @@ function App() {
         </div>
 
         {/* Footer */}
-        <footer className='footer'>Copyright &#169; 2020 Tanner Townsend. All rights reserved.</footer>
+        <footer className='footer'>Copyright &#169; 2020 Timothy Mureithi All rights reserved.</footer>
       </div>
     </BrowserRouter>
   );
