@@ -16,7 +16,11 @@ const ProfileContainer = props => {
     .filter(order => order.user.id === userInfo.user.id)
     .sort((a, b) => (a.created_at < b.created_at ? 1 : -1));
     
-
+    const handleLogout = () => {
+        dispatch(logout());
+        props.history.push('/signin');
+      };
+    
   
   const submitHandler = e => {
     e.preventDefault();
@@ -64,7 +68,26 @@ const ProfileContainer = props => {
                 id='last_name'
                 onChange={e => setLastName(e.target.value)}
               />
-               
+            <li>
+              <label htmlFor='email'>Email</label>
+              <input
+                value={email}
+                required
+                type='email'
+                name='email'
+                id='email'
+                onChange={e => setEmail(e.target.value)}
+              />
+               </li>
+            <li>
+              <label htmlFor='password'>Password</label>
+              <input
+                required
+                type='password'
+                id='password'
+                name='password'
+                onChange={e => setPassword(e.target.value)}
+              />
           
 
   )
