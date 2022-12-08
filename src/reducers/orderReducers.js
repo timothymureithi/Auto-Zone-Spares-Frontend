@@ -40,3 +40,40 @@ export const productsReducer = (
           sort: action.payload.sort,
           filteredProducts: action.payload.sortedProducts,
         };
+        
+        // See Details of a Product
+    case 'GET_PRODUCT':
+        return {
+          ...state,
+          product: action.payload,
+        };
+  
+      // Create/Update An Individual Product
+      case 'SAVE_PRODUCT':
+        return {
+          ...state,
+          success: true,
+          product: action.payload,
+        };
+  
+      // Delete An Individual Product
+      case 'DELETE_PRODUCT':
+        return {
+          ...state,
+          success: true,
+          product: action.payload,
+        };
+  
+      // Create a Product Review and Save It
+      case 'SAVE_PRODUCT_REVIEW':
+        return {
+          ...state,
+          success: true,
+          review: action.payload,
+        };
+  
+      default:
+        return state;
+    }
+  };
+  
