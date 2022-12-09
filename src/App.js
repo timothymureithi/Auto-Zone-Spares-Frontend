@@ -18,6 +18,7 @@ import ProfileContainer from './containers/userContainers/ProfileContainer';
 // Admin Containers
 import ProductsContainer from './containers/adminContainers/ProductsContainer';
 import OrdersContainer from './containers/adminContainers/OrdersContainer';
+import Main from './components/Main';
 
 function App() {
   const dispatch = useDispatch();
@@ -116,6 +117,7 @@ function App() {
             <Route path='/products/:id' exact component={ProductContainer} />
             <Route path='/cart/:id?' component={CartContainer} />
             <Route path='/' exact component={HomeContainer} />
+            <Route path='/' exact component={Main.js}
           </main>
         </div>
 
