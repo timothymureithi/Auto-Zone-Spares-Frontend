@@ -18,7 +18,8 @@ import ProfileContainer from './containers/userContainers/ProfileContainer';
 // Admin Containers
 import ProductsContainer from './containers/adminContainers/ProductsContainer';
 import OrdersContainer from './containers/adminContainers/OrdersContainer';
-import Main from './components/Main';
+// Logo
+import logo from '../images/logo.png'
 
 function App() {
   const dispatch = useDispatch();
@@ -42,11 +43,10 @@ function App() {
   return (
     <BrowserRouter>
       <div className='grid-container'>
-        {/* Header Section */}
         <header className='header'>
           <div className='brand'>
             <button onClick={openMenu}>&#9776;</button>
-            <Link to='/'>AUTOZONE</Link>
+            <img src={logo} alt="Trees" height="200" />
           </div>
           <div className='header-links'>
             <Link to='/cart'>
@@ -67,7 +67,6 @@ function App() {
           </div>
         </header>
 
-        {/* Category Section */}
         <aside className='sidebar'>
           <h3>Shopping Categories</h3>
           <button className='sidebar-close-button' onClick={closeMenu}>
@@ -102,7 +101,6 @@ function App() {
           </ul>
         </aside>
 
-        {/* Main Content Section */}
         <div className='content'>
           <main className='main'>
             <Route path='/register' component={RegisterContainer} />
@@ -117,7 +115,6 @@ function App() {
             <Route path='/products/:id' exact component={ProductContainer} />
             <Route path='/cart/:id?' component={CartContainer} />
             <Route path='/' exact component={HomeContainer} />
-            <Route path='/' exact component={Main.js}
           </main>
         </div>
 
