@@ -81,11 +81,13 @@ button {
 .main-content {
   grid-area: main;
   flex: 3 60rem;
+  
 }
 
 .cart-sidebar {
   flex: 1 20rem;
 }
+
 
 .footer {
   grid-area: footer;
@@ -162,6 +164,7 @@ ul.review {
   list-style-type: none;
   padding: 0;
 }
+
 
 .review li {
   margin: 1rem;
@@ -625,7 +628,6 @@ tbody > tr:nth-child(odd) {
   background-color: #c0c0c0;
 }
 
-/* Admin Orders Page */
 .order-list tbody td a {
   margin: 0 1rem;
 }
@@ -633,3 +635,28 @@ tbody > tr:nth-child(odd) {
 .order-list tbody td button {
   margin: 0 1rem;
 }
+
+@media only screen and (max-width:998px) {
+  /* For tablets: */
+  .main {
+    width: 80%;
+    padding: 0;
+  }
+  .right {
+    width: 100%;
+  }
+  .cart-sidebar{
+    display: none;
+  }
+
+  .filter{
+    display: none;
+  }
+}
+@media only screen and (max-width:500px) {
+  /* For mobile phones: */
+  .header, .main, .footer {
+    width: 100%;
+  }
+}
+

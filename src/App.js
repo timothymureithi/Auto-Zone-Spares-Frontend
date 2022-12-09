@@ -100,7 +100,7 @@ function App() {
             </li>
           </ul>
         </aside>
-        
+
         {/* Main Content Section */}
         <div className='content'>
           <main className='main'>
@@ -120,7 +120,7 @@ function App() {
         </div>
 
         {/* Footer */}
-        <footer className='footer'>Copyright &#169; 2020 Timothy Mureithi All rights reserved.</footer>
+        <footer className='footer'>Copyright &#169; 2022 Timothy Mureithi All rights reserved.</footer>
       </div>
     </BrowserRouter>
   );
