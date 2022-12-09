@@ -19,7 +19,6 @@ import ProfileContainer from './containers/userContainers/ProfileContainer';
 import ProductsContainer from './containers/adminContainers/ProductsContainer';
 import OrdersContainer from './containers/adminContainers/OrdersContainer';
 // Logo
-import logo from '../images/logo.png'
 
 function App() {
   const dispatch = useDispatch();
@@ -46,7 +45,7 @@ function App() {
         <header className='header'>
           <div className='brand'>
             <button onClick={openMenu}>&#9776;</button>
-            <img src={logo} alt="Trees" height="200" />
+            <Link to='/'>AUTOZONE</Link>
           </div>
           <div className='header-links'>
             <Link to='/cart'>

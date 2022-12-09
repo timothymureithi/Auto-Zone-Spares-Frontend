@@ -18,5 +18,62 @@ password: qwert
 - USER LOGIN 
 ```
 username: judy@autozone.com
-password: zxcvb
+password: asdfg
 ```
+
+**Sample Code**
+- RAILS
+```
+   def create
+        @user = User.find_by(email: session_params[:email])
+        if @user && @user.authenticate(session_params[:password])
+            login!
+            render json: { logged_in: true, user: @user}
+        else
+            render json: { status: 401, errors: ['No user by that name or id saved!']}
+        end
+    end
+
+    def is_logged_in?
+        if logged_in? && current_user
+            render json: { logged_in: true, user: current_user }
+            else 
+                render json: { logged_in: false, message: 'user not found!'}
+             end
+    end 
+```
+
+- REACT
+```
+   const BASE_URL = 'http://localhost:3001/api/v1';
+
+export const signin = (email, password) => dispatch => {
+    fetch(`${BASE_URL}/login`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({ email, password }),
+    })
+      .then(res => res.json())
+      .then(user => dispatch({ type: 'LOGIN_USER', payload: user }));
+  };
+
+```
+
+**IMAGE DEMO**
+![](images/Screenshot%20from%202022-09-02%2003-16-11.png)
+![](images/Screenshot%20from%202022-09-02%2003-16-54.png)
+
+**LINK**
+- COMING SOON
+
+**Future Implementation**
+The application still needs some work in order to be presentable. 
+- Try and work more on making my applications mobile responsive. 
+- Adding a secure payment gateway
+- Implementing Material UI
+
+**Developer**
+- [Timothy Mureithi](https://github.com/timothymureithi/)
+
