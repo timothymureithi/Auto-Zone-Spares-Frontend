@@ -1,3 +1,8 @@
+**Video Link**
+- Live Link (Under Construction)
+- [Video Predentation](https://www.youtube.com/watch?v=85jH69IR9e0)
+
+
 # AUTOZONE
 
 This e-commerce site was created with the goal of providing authentic car components to customers and assuring their delivery.
@@ -68,9 +73,8 @@ export const signin = (email, password) => dispatch => {
 
 
 
-**LINK**
+**LINKS**
 - COMING SOON
-- [Video Predentation](https://www.youtube.com/watch?v=85jH69IR9e0)
 
 
 **Future Implementation**
