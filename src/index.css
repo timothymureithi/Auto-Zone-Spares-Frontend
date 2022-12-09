@@ -639,7 +639,7 @@ tbody > tr:nth-child(odd) {
 @media only screen and (max-width:998px) {
   /* For tablets: */
   .main {
-    width: 80%;
+    width: 70%;
     padding: 0;
   }
   .right {
@@ -649,8 +649,10 @@ tbody > tr:nth-child(odd) {
     display: none;
   }
 
+
   .filter{
-    display: none;
+     width: 10%;
+     align-items: center;
   }
 }
 @media only screen and (max-width:500px) {
