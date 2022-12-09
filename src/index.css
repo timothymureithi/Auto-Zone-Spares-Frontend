@@ -649,15 +649,22 @@ tbody > tr:nth-child(odd) {
     display: none;
   }
 
-
-  .filter{
-     width: 10%;
-     align-items: center;
+  .filter input{
+    display: block;
+    width: auto;
   }
+  
+.filter button,
+.filter select {
+    display: block;
+    width: auto;
+  }
+
+  
 }
 @media only screen and (max-width:500px) {
   /* For mobile phones: */
-  .header, .main, .footer {
+   .main, .footer {
     width: 100%;
   }
 }
