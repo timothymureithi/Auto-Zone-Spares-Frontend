@@ -82,7 +82,7 @@ export const signin = (email, password) => dispatch => {
 
 
 **Future Implementation**
-The application still needs some work in order to be presentable. 
+- The application still needs some work in order to be presentable. 
 - Try and work more on making my applications mobile responsive. 
 - Adding a secure payment gateway
 - Implementing Material UI
