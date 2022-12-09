@@ -62,17 +62,23 @@ export const signin = (email, password) => dispatch => {
 ```
 
 **IMAGE DEMO**
-![](images/Screenshot%20from%202022-09-02%2003-16-11.png)
-![](images/Screenshot%20from%202022-09-02%2003-16-54.png)
+![](public/images/Screenshot%20from%202022-12-09%2016-13-32.png)
+![](public/images/Screenshot%20from%202022-12-09%2016-14-00.png)
+![](public/images/Screenshot%20from%202022-12-09%2016-14-25.png)
+
+
 
 **LINK**
 - COMING SOON
+- [Video Predentation](https://drive.google.com/file/d/1LZZ_ExRhA8wgAbl-nTe0v1MNLVkBi1RE/view?usp=sharing)
+
 
 **Future Implementation**
 The application still needs some work in order to be presentable. 
 - Try and work more on making my applications mobile responsive. 
 - Adding a secure payment gateway
 - Implementing Material UI
+- 
 
 **Developer**
 - [Timothy Mureithi](https://github.com/timothymureithi/)
