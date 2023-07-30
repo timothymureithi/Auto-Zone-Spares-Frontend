@@ -1,5 +1,4 @@
 **Video Link**
-- Live Link (Under Construction)
 - [Video Presentation YouTube](https://www.youtube.com/watch?v=85jH69IR9e0)
 - [Video Presentation Google Drive](https://drive.google.com/file/d/1LZZ_ExRhA8wgAbl-nTe0v1MNLVkBi1RE/view?usp=sharing)
 
